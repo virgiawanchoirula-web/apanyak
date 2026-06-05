@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harapan Terbaik Untukmu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #ffe6eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Mencegah scroll saat emoji muncul */
+        }
+
+        /* Container Utama */
+        .card-container {
+            width: 90%;
+            max-width: 600px;
+            background: linear-gradient(135deg, #ff99bb, #ff6699);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Teks Ucapan */
+        .wishes {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+        }
+
+        /* Tombol Interaktif */
+        .action-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ffffff;
+            color: #ff3377;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 51, 119, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 51, 119, 0.6);
+        }
+
+        /* Gaya untuk elemen Emoji Berjatuhan */
+        .floating-emoji {
+            position: absolute;
+            font-size: 2.5rem;
+            pointer-events: none;
+            z-index: 999;
+            animation: fall 2.5s linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Teks Ucapan -->
+        <p class="wishes">
+            "Selamat merayakan hari dengan doa-doa baik yang diaminkan semesta. Jangan lelah menjadi orang baik, ya!! WYATB lovee"
+        </p>
+        
+        <!-- Tombol Klik -->
+        <button class="action-btn" onclick="makeItRain()">KLIKKK 🎉</button>
+    </div>
+
+    <!-- Script JavaScript untuk Efek Pop-up Emoji -->
+    <script>
+        function makeItRain() {
+            // Daftar emoji yang akan muncul
+            const emojis = ['🎉', '🎂', '✨', '🎈', '❤️', '🥳', '🎁'];
+            
+            // Membuat 30 emoji sekaligus setiap kali tombol diklik
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const emojiElement = document.createElement('div');
+                    emojiElement.classList.add('floating-emoji');
+                    
+                    // Memilih emoji acak dari daftar
+                    emojiElement.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                    
+                    // Mengatur posisi horizontal acak (0% sampai 100% lebar layar)
+                    emojiElement.style.left = Math.random() * 100 + 'vw';
+                    
+                    // Mengatur posisi vertikal awal sedikit di atas layar
+                    emojiElement.style.top = '-50px';
+                    
+                    // Mengatur ukuran font acak agar bervariasi
+                    emojiElement.style.fontSize = (Math.random() * 1.5 + 1.5) + 'rem';
+                    
+                    // Mengatur durasi kecepatan jatuh secara acak
+                    emojiElement.style.animationDuration = (Math.random() * 1.5 + 1.5) + 's';
+                    
+                    document.body.appendChild(emojiElement);
+                    
+                    // Menghapus elemen dari dokumen setelah animasi selesai agar tidak membebani memori
+                    setTimeout(() => {
+                        emojiElement.remove();
+                    }, 2500);
+                }, i * 50); // Jeda tipis antar pembuatan emoji agar terlihat natural
+            }
+        }
+    </script>
+
+</body>
+</html>

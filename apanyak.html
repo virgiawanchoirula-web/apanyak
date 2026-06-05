@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #ffe6eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container Utama Web */
+        .web-container {
+            width: 90%;
+            max-width: 800px;
+            background: linear-gradient(135deg, #ff99bb, #ff6699);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Bagian Navigasi atas (Navbar) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffe6eb;
+        }
+
+        /* Bagian Konten Utama */
+        .main-content {
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* Judul Besar */
+        .title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px #ff3377;
+        }
+
+        /* Ilustrasi Simbolis (Menggantikan gambar kue & balon) */
+        .decorations {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Tombol menuju file berikutnya */
+        .next-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: #ffffff;
+            color: #ff3377;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 51, 119, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 51, 119, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="web-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">🎉</div>
+            </ul>
+        </nav>
+
+        <!-- Konten Utama -->
+        <main class="main-content">
+            <div class="decorations">🎈 🎂 ✨</div>
+            <h1 class="title">Selamat Ulang Tahun!!</h1>
+            
+            <!-- Tombol Aksi -->
+            <a href="kenaapa nyak.html" class="next-btn">KLIK!!!✨</a>
+        </main>
+    </div>
+
+</body>
+</html>
